@@ -1,5 +1,5 @@
 <script setup>
-import calendly from '@/utils/calendly'
+import calendly from '../utils/calendly'
 
 const props = defineProps({
     url: {
