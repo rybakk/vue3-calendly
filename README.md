@@ -28,3 +28,9 @@ createApp(App)
     <VueCalendly url="https://calendly.com/YOUR_URL" :height="600" />
 </template>
 ```
+
+### Events
+```
+@load
+@calendlyEvent
+```
