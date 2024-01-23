@@ -1,5 +1,6 @@
 <script setup>
 import calendly from '../utils/calendly'
+import { onMounted, ref } from 'vue'
 
 const props = defineProps({
     url: {
@@ -12,7 +13,7 @@ const props = defineProps({
     },
 })
 
-const emit = defineEmits(['load'])
+const emit = defineEmits(['load', 'calendlyEvent'])
 
 const calendlyDiv = ref(null)
 
@@ -21,6 +22,11 @@ onMounted(() => {
         onLoad(e) {
             emit('load', e)
         },
+    })
+    window.addEventListener("message", function(e) {
+        if(e.origin === "https://calendly.com" && e.data.event && e.data.event.indexOf("calendly.") === 0) {
+            emit('calendlyEvent', e.data)
+        }
     })
 })
 </script>
