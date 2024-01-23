@@ -14,10 +14,10 @@ $ npm install vue3-calendly
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import VueCalendly from 'vue3-calendly'
+import Vue3Calendly from 'vue3-calendly'
 
 createApp(App)
-  .use(VueCalendly)
+  .use(Vue3Calendly)
   .mount('#app')
   ```
 
@@ -25,7 +25,7 @@ createApp(App)
 
 ```
 <template>
-    <VueCalendly url="https://calendly.com/YOUR_URL" :height="600" />
+    <Vue3Calendly url="https://calendly.com/YOUR_URL" :height="600" />
 </template>
 ```
 
